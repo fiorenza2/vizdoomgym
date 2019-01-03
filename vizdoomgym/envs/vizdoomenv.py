@@ -3,7 +3,6 @@ from gym import spaces
 from vizdoom import *
 import numpy as np
 import os
-from gym.envs.classic_control import rendering
 
 CONFIGS = [['basic.cfg', 3],                # 0
            ['deadly_corridor.cfg', 7],      # 1
@@ -66,10 +65,7 @@ class VizdoomEnv(gym.Env):
         try:
             img = self.game.get_state().screen_buffer
             img = np.transpose(img, [1, 2, 0])
-
-            if self.viewer is None:
-                self.viewer = rendering.SimpleImageViewer()
-            self.viewer.imshow(img)
+            return img
         except AttributeError:
             pass
 
