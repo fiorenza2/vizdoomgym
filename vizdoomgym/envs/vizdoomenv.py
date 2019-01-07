@@ -65,9 +65,20 @@ class VizdoomEnv(gym.Env):
         try:
             img = self.game.get_state().screen_buffer
             img = np.transpose(img, [1, 2, 0])
-            return img
+            if mode == 'rgb_array':
+                return img
+            elif mode == 'human':
+                from gym.envs.classic_control import rendering
+                if self.viewer is None:
+                    self.viewer = rendering.SimpleImageViewer()
+                self.viewer.imshow(img)
         except AttributeError:
             pass
+
+    def close(self):
+        if self.viewer:
+            self.viewer.close()
+            self.viewer = None
 
     @staticmethod
     def get_keys_to_action():
