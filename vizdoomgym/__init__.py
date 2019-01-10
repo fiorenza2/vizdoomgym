@@ -6,6 +6,11 @@ register(
 )
 
 register(
+    id='VizdoomSimplerBasic-v0',
+    entry_point='vizdoomgym.envs:VizdoomSimplerBasic'
+)
+
+register(
     id='VizdoomCorridor-v0',
     entry_point='vizdoomgym.envs:VizdoomCorridor'
 )

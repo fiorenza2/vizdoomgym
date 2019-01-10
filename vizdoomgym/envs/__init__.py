@@ -1,5 +1,6 @@
 from vizdoomgym.envs.vizdoomenv import VizdoomEnv
 from vizdoomgym.envs.vizdoombasic import VizdoomBasic
+from vizdoomgym.envs.vizdoomsimplerbasic import VizdoomSimplerBasic
 from vizdoomgym.envs.vizdoomcorridor import VizdoomCorridor
 from vizdoomgym.envs.vizdoomdefendcenter import VizdoomDefendCenter
 from vizdoomgym.envs.vizdoomdefendline import VizdoomDefendLine
